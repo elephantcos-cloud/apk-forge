@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">APK Forge</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_build">Build</string>
+    <string name="nav_history">History</string>
+    <string name="nav_settings">Settings</string>
+
+    <string name="hint_owner">GitHub Username / Org</string>
+    <string name="hint_repo">Repository Name</string>
+    <string name="hint_branch">Branch (default: main)</string>
+    <string name="hint_workflow">Workflow file (e.g. build.yml)</string>
+    <string name="hint_token">GitHub Personal Access Token</string>
+    <string name="hint_webhook">Webhook URL (optional)</string>
+
+    <string name="btn_build">🔨 Start Build</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_save">Save Settings</string>
+    <string name="btn_validate">Validate Token</string>
+    <string name="btn_quick_build">⚡ Quick Build</string>
+    <string name="btn_view_history">📋 Build History</string>
+    <string name="btn_settings">⚙️ Settings</string>
+
+    <string name="status_ready">Ready to build</string>
+    <string name="status_no_builds">No recent builds</string>
+    <string name="error_empty_owner">Please enter GitHub username</string>
+    <string name="error_empty_repo">Please enter repository name</string>
+    <string name="error_no_token">GitHub token not configured. Go to Settings.</string>
+    <string name="success_settings_saved">✅ Settings saved</string>
+</resources>

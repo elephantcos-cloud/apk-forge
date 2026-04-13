@@ -1,0 +1,23 @@
+<resources>
+    <!-- APK Forge Brand Colors -->
+    <color name="forge_orange">#FF6D00</color>
+    <color name="forge_orange_dark">#E65100</color>
+    <color name="forge_blue">#2196F3</color>
+    <color name="forge_green">#4CAF50</color>
+    <color name="forge_red">#F44336</color>
+    <color name="forge_yellow">#FFC107</color>
+
+    <!-- Dark Theme Surfaces -->
+    <color name="background_dark">#0D1117</color>
+    <color name="surface_dark">#161B22</color>
+    <color name="surface_elevated">#21262D</color>
+    <color name="on_surface">#C9D1D9</color>
+    <color name="on_surface_muted">#8B949E</color>
+
+    <!-- Status Colors -->
+    <color name="status_success">#4CAF50</color>
+    <color name="status_failed">#F44336</color>
+    <color name="status_running">#2196F3</color>
+    <color name="status_queued">#FFC107</color>
+    <color name="status_cancelled">#9E9E9E</color>
+</resources>

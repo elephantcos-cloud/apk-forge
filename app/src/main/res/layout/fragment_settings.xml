@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="16dp">
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="⚙️ Settings" android:textColor="@color/on_surface"
+            android:textSize="22sp" android:textStyle="bold" android:layout_marginBottom="20dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="@string/hint_token" android:layout_marginBottom="8dp"
+            app:boxBackgroundColor="@color/surface_dark" app:boxStrokeColor="@color/forge_orange"
+            app:passwordToggleEnabled="true"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_token" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textColor="@color/on_surface"
+                android:inputType="textPassword"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_validate_token"
+            android:layout_width="wrap_content" android:layout_height="40dp"
+            android:text="@string/btn_validate" app:backgroundTint="@color/surface_elevated"
+            android:layout_marginBottom="4dp"/>
+        <TextView android:id="@+id/tv_token_status"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textColor="@color/on_surface_muted" android:textSize="13sp"
+            android:layout_marginBottom="16dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="GitHub Username" android:layout_marginBottom="12dp"
+            app:boxBackgroundColor="@color/surface_dark" app:boxStrokeColor="@color/forge_orange"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_default_owner" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textColor="@color/on_surface"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Default Repository" android:layout_marginBottom="12dp"
+            app:boxBackgroundColor="@color/surface_dark" app:boxStrokeColor="@color/forge_orange"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_default_repo" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textColor="@color/on_surface"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Default Branch" android:layout_marginBottom="12dp"
+            app:boxBackgroundColor="@color/surface_dark" app:boxStrokeColor="@color/forge_orange"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_default_branch" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textColor="@color/on_surface"
+                android:text="main"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="@string/hint_webhook" android:layout_marginBottom="16dp"
+            app:boxBackgroundColor="@color/surface_dark" app:boxStrokeColor="@color/forge_orange"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_webhook_url" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textColor="@color/on_surface"
+                android:inputType="textUri"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="20dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Auto-install APK after download"
+                android:textColor="@color/on_surface"/>
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_auto_install" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="@string/btn_save" android:textSize="16sp"
+            app:backgroundTint="@color/forge_orange"/>
+    </LinearLayout>
+</ScrollView>

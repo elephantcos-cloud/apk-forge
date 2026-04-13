@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.apkforge.ui.dashboard.DashboardFragment"
+        android:label="Dashboard">
+        <action android:id="@+id/action_dashboard_to_build"
+            app:destination="@id/buildFragment"/>
+        <action android:id="@+id/action_dashboard_to_history"
+            app:destination="@id/historyFragment"/>
+        <action android:id="@+id/action_dashboard_to_settings"
+            app:destination="@id/settingsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/buildFragment"
+        android:name="com.apkforge.ui.build.BuildFragment"
+        android:label="Build"/>
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.apkforge.ui.history.HistoryFragment"
+        android:label="History"/>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.apkforge.ui.settings.SettingsFragment"
+        android:label="Settings"/>
+
+</navigation>
