@@ -27,13 +27,16 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x gradlew
 
+      - name: Generate gradle wrapper
+        run: gradle wrapper --gradle-version 8.4
+
       - name: Build Debug APK
         if: ${{ github.event.inputs.build_type == 'debug' }}
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleDebug --no-daemon -Dorg.gradle.jvmargs="-Xmx3g"
 
       - name: Build Release APK
         if: ${{ github.event.inputs.build_type == 'release' }}
-        run: ./gradlew assembleRelease
+        run: ./gradlew assembleRelease --no-daemon -Dorg.gradle.jvmargs="-Xmx3g"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
