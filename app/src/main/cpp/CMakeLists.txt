@@ -19,7 +19,6 @@ add_library(
     apkforge_native
     SHARED
     native_bridge.cpp
-    crypto_utils.cpp
     file_ops.cpp
     hash_engine.cpp
 )
