@@ -1,29 +1,20 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Base Theme -->
     <style name="Theme.ApkForge" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/forge_orange</item>
-        <item name="colorPrimaryVariant">@color/forge_orange_dark</item>
         <item name="colorOnPrimary">@android:color/white</item>
         <item name="colorSecondary">@color/forge_blue</item>
         <item name="colorOnSecondary">@android:color/white</item>
         <item name="colorSurface">@color/surface_dark</item>
         <item name="colorOnSurface">@color/on_surface</item>
-        <item name="colorBackground">@color/background_dark</item>
+        <item name="android:colorBackground">@color/background_dark</item>
         <item name="android:statusBarColor">@color/background_dark</item>
         <item name="android:navigationBarColor">@color/background_dark</item>
         <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
     </style>
 
-    <!-- Splash Theme -->
     <style name="Theme.ApkForge.Splash" parent="Theme.ApkForge">
         <item name="android:windowBackground">@color/background_dark</item>
-    </style>
-
-    <!-- Toolbar -->
-    <style name="Widget.ApkForge.Toolbar" parent="Widget.Material3.Toolbar">
-        <item name="android:background">@color/background_dark</item>
-        <item name="titleTextColor">@color/on_surface</item>
     </style>
 
 </resources>
