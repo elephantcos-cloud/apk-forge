@@ -73,12 +73,12 @@ public class BuildManager {
             return;
         }
 
-        Log.i(TAG, "Starting build: " + job.owner + "/" + job.repo + " [" + job.branch + "]");
+        Log.i(TAG, "Starting build: " + job.getOwner() + "/" + job.getRepo() + " [" + job.getBranch() + "]");
 
         // Trigger workflow in background
         scheduler.execute(() -> {
             GithubApiClient.ApiResult<Void> triggerResult = apiClient.triggerWorkflow(
-                    job.owner, job.repo, job.workflowFile, job.branch);
+                    job.getOwner(), job.getRepo(), job.getWorkflowFile(), job.getBranch());
 
             if (!triggerResult.success) {
                 String msg = buildErrorMessage(triggerResult);
@@ -148,7 +148,7 @@ public class BuildManager {
             }
 
             GithubApiClient.ApiResult<JsonObject> result =
-                    apiClient.getWorkflowRun(job.owner, job.repo, runId);
+                    apiClient.getWorkflowRun(job.getOwner(), job.getRepo(), runId);
 
             if (!result.success) {
                 Log.w(TAG, "Poll failed: " + buildErrorMessage(result));
@@ -180,7 +180,7 @@ public class BuildManager {
 
     private void fetchArtifacts(BuildJob job, long runId, BuildCallback callback) {
         GithubApiClient.ApiResult<JsonObject> result =
-                apiClient.listArtifacts(job.owner, job.repo, runId);
+                apiClient.listArtifacts(job.getOwner(), job.getRepo(), runId);
 
         if (!result.success) {
             callback.onBuildFailed(runId, "Failed to fetch artifacts: " + buildErrorMessage(result));
@@ -195,8 +195,8 @@ public class BuildManager {
             info.id          = a.get("id").getAsLong();
             info.name        = a.get("name").getAsString();
             info.sizeInBytes = a.get("size_in_bytes").getAsLong();
-            info.owner       = job.owner;
-            info.repo        = job.repo;
+            info.owner       = job.getOwner();
+            info.repo        = job.getRepo();
             artifacts.add(info);
         }
 
@@ -206,7 +206,7 @@ public class BuildManager {
 
     private long findLatestRunId(BuildJob job) {
         GithubApiClient.ApiResult<JsonObject> result =
-                apiClient.listWorkflowRuns(job.owner, job.repo, job.workflowFile, 5);
+                apiClient.listWorkflowRuns(job.getOwner(), job.getRepo(), job.getWorkflowFile(), 5);
         if (!result.success || !result.data.has("workflow_runs")) return -1;
 
         JsonArray runs = result.data.getAsJsonArray("workflow_runs");
